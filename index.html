@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Éclat Studio — Salão de Beleza</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="#" aria-label="Éclat Studio">
+        <svg viewBox="0 0 100 100" class="logo-svg" role="img" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="g" x1="0" x2="1">
+              <stop offset="0" stop-color="#FFD6E0"/>
+              <stop offset="1" stop-color="#FF9BCB"/>
+            </linearGradient>
+          </defs>
+          <img src="/images/logo.png" alt="">
+        </svg>
+      </a>
+
+      <nav class="nav">
+        <a href="#servicos">Serviços</a>
+        <a href="#galeria">Galeria</a>
+        <a href="#equipe">Equipe</a>
+        <a href="#contato" class="btn-outline">Contato</a>
+      </nav>
+
+      <button class="hamburger" aria-label="Abrir menu" id="hamburger">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <h1 class="title">Beleza que brilha de dentro pra fora</h1>
+          <p class="subtitle">Cortes, coloração, estética e experiências premium em um ambiente sofisticado.</p>
+          <div class="hero-ctas">
+            <a class="btn-primary" id="bookBtn">Agendar</a>
+            <a class="btn-ghost" href="#servicos">Nossos serviços</a>
+          </div>
+          <ul class="badges">
+            <li>Styling de luxo</li>
+            <li>Produtos veganos</li>
+            <li>Atendimento personalizado</li>
+          </ul>
+        </div>
+
+        <div class="hero-visual">
+          <div class="card-floating">
+            <picture>
+              <source media="(min-width:800px)" srcset="images/cabelereiros.jpg">
+              <img src="/images/cabelereiros.jpg" alt="Cabelo e beleza" loading="lazy">
+            </picture>
+            <div class="card-info">
+              <h4>Transformações</h4>
+              <p>Consultoria de imagem e colorimetria.</p>
+            </div>
+          </div>
+          <div class="accent-orb" aria-hidden="true"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="servicos" class="services container section">
+      <h2 class="section-title">Serviços</h2>
+      <p class="section-lead">Oferecemos pacotes personalizados para cada necessidade — do corte ao tratamento capilar profissional.</p>
+
+      <div class="services-grid">
+        <article class="service-card" data-anim>
+          <div class="svg"><img src="/svgs/tesoura.svg" alt=""></div>
+          <h3>Corte & Styling</h3>
+          <p>Consultoria e execução com técnicas modernas e clássicas.</p>
+          <a class="card-link">Saiba mais →</a>
+        </article>
+
+        <article class="service-card" data-anim>
+          <div class="svg"><img src="/svgs/color.svg" alt=""></div>
+          <h3>Coloração Premium</h3>
+          <p>Técnicas de balayage, babylights e coloração sem danos.</p>
+          <a class="card-link">Saiba mais →</a>
+        </article>
+
+        <article class="service-card" data-anim>
+          <div class="svg"><img src="/svgs/face.svg" alt=""></div>
+          <h3>Estética Facial</h3>
+          <p>Procedimentos não invasivos para realçar sua beleza.</p>
+          <a class="card-link">Saiba mais →</a>
+        </article>
+      </div>
+    </section>
+
+    <section id="galeria" class="gallery section">
+      <div class="container">
+        <h2 class="section-title">Galeria</h2>
+        <p class="section-lead">Algumas transformações feitas no nosso estúdio.</p>
+
+        <div class="masonry" id="masonry">
+          <!-- Gallery items (placeholders) -->
+          <div class="masonry-item"><img src="/images/cabelo1.jpg" alt="Galeria 1" loading="lazy"></div>
+          <div class="masonry-item"><img src="/images/cabelo2.jpg" alt="Galeria 2" loading="lazy"></div>
+          <div class="masonry-item"><img src="images/example.jpg" alt="Galeria 3" loading="lazy"></div>
+          <!--<div class="masonry-item"><img src="images/gallery4.jpg" alt="Galeria 4" loading="lazy"></div>
+          <div class="masonry-item"><img src="images/gallery5.jpg" alt="Galeria 5" loading="lazy"></div> -->
+        </div>
+      </div>
+    </section>
+
+    <section id="equipe" class="team section">
+      <div class="container">
+        <h2 class="section-title">Nossa equipe</h2>
+        <div class="team-grid">
+          <div class="team-card" data-anim>
+            <img src="images/cabelereira2.jpg" alt="Stylist 1">
+            <h4>Mariana Costa</h4>
+            <p>Colorista & Founder</p>
+          </div>
+          <div class="team-card" data-anim>
+            <img src="images/cabelereiro1.jpg" alt="Stylist 2">
+            <h4>Lucas Ribeiro</h4>
+            <p>Barbeiro & Styling</p>
+          </div>
+          <div class="team-card" data-anim>
+            <img src="images/cabelereira3.jpg" alt="Stylist 3">
+            <h4>Ana Pereira</h4>
+            <p>Esteticista</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contato" class="contact section">
+      <div class="container contact-grid">
+        <div class="contact-card" data-anim>
+          <h2>Fale com a gente</h2>
+          <p>Rua Imaginária, 123 • Centro • Cidade - SP</p>
+          <p>Email: contato@eclatstudio.com • Tel: (11) 99999-9999</p>
+          <div class="socials">
+            <a href="#" aria-label="Instagram">IG</a>
+            <a href="#" aria-label="WhatsApp">WA</a>
+            <a href="#" aria-label="TikTok">TT</a>
+          </div>
+        </div>
+
+        <form class="form-card" id="bookingForm" data-anim>
+          <h3>Reserve seu horário</h3>
+          <div class="fields">
+            <input type="text" name="name" placeholder="Nome completo" required>
+            <input type="tel" name="phone" placeholder="Telefone" required>
+            <select name="service" required>
+              <option value="">Escolha um serviço</option>
+              <option>Corte & Styling</option>
+              <option>Coloração Premium</option>
+              <option>Estética Facial</option>
+              <option>Pacote VIP</option>
+            </select>
+            <input type="datetime-local" name="date" required>
+          </div>
+          <textarea name="notes" placeholder="Observações (opcional)"></textarea>
+          <button type="submit" class="btn-primary">Enviar pedido</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>© <span id="year"></span> SITE DE APRESENTAÇÃO DESENVOLVIDO POR ARTHUR DAHMER.</div>
+      <div class="footer-links">
+      </div>
+    </div>
+  </footer>
+
+  <!-- Booking modal -->
+  <div id="modal" class="modal" aria-hidden="true">
+    <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="modal-close" id="modalClose" aria-label="Fechar">✕</button>
+      <h3 id="modalTitle">Agendamento</h3>
+      <p>Escolha seu serviço e informe seus dados no formulário abaixo.</p>
+      <form class="modal-form" id="modalForm">
+        <input name="mname" placeholder="Nome" required>
+        <input name="mphone" placeholder="Telefone" required>
+        <select name="mservice" required>
+          <option value="">Selecione</option>
+          <option>Corte & Styling</option>
+          <option>Coloração Premium</option>
+        </select>
+        <input type="datetime-local" name="mdate" required>
+        <button class="btn-primary" type="submit">Enviar</button>
+      </form>
+    </div>
+  </div>
+
+</body>
+</html>

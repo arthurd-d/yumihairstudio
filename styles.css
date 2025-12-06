@@ -1,0 +1,130 @@
+/* Modern dark theme with glassmorphism and motion */
+:root{
+  --bg:#0b0f12;
+  --panel: rgba(255,255,255,0.03);
+  --muted: rgba(255,255,255,0.6);
+  --accent1: #FF79C6;
+  --accent2: #9B59FF;
+  --glass: rgba(255,255,255,0.04);
+  --radius: 16px;
+  --container: 1200px;
+  font-family: 'Montserrat', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  color-scheme: dark;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  background:
+    radial-gradient(1200px 600px at 10% 10%, rgba(155,89,255,0.08), transparent 6%),
+    radial-gradient(1000px 400px at 90% 90%, rgba(255,121,198,0.06), transparent 8%),
+    var(--bg);
+  color:#fff;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.45;
+}
+
+/* layout */
+.container{max-width:var(--container);margin:0 auto;padding:0 20px}
+.header-inner{display:flex;align-items:center;justify-content:space-between;padding:20px 0}
+.site-header{position:sticky;top:0;z-index:60;backdrop-filter:blur(6px);background:linear-gradient(180deg, rgba(0,0,0,0.35), transparent);border-bottom:1px solid rgba(255,255,255,0.03)}
+
+/* logo */
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none;color:inherit}
+.logo-svg{width:52px;height:52px}
+.brand{font-weight:700;font-family:'Playfair Display', serif;letter-spacing:0.4px}
+
+/* nav */
+.nav{display:flex;gap:18px;align-items:center}
+.nav a{color:var(--muted);text-decoration:none;font-weight:600}
+.btn-outline{padding:8px 14px;border-radius:10px;border:1px solid rgba(255,255,255,0.06);backdrop-filter:blur(4px)}
+
+/* hamburger */
+.hamburger{display:none;background:none;border:0;padding:8px}
+.hamburger span{display:block;width:26px;height:2px;background:linear-gradient(90deg,var(--accent1),var(--accent2));margin:5px 0;border-radius:2px;transition:transform .25s}
+
+/* hero */
+.hero{padding:80px 0 40px;position:relative}
+.hero-grid{display:grid;grid-template-columns:1fr 520px;gap:40px;align-items:center}
+.title{font-family:'Playfair Display', serif;font-size:48px;margin:0 0 12px}
+.subtitle{color:var(--muted);margin-bottom:18px}
+.hero-ctas{display:flex;gap:12px;margin-bottom:14px}
+.btn-primary{background:linear-gradient(90deg,var(--accent1),var(--accent2));padding:12px 20px;border-radius:12px;color:#071018;text-weight:700;text-decoration:none;cursor:pointer;border:0;font-weight:700}
+.btn-ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:10px 16px;border-radius:12px;color:var(--muted)}
+
+/* badges */
+.badges{display:flex;gap:12px;margin-top:18px;list-style:none;padding:0}
+.badges li{background:var(--glass);padding:8px 12px;border-radius:999px;color:var(--muted);font-weight:600;font-size:13px}
+
+/* hero visual */
+.hero-visual{position:relative;display:flex;justify-content:center;align-items:center}
+.card-floating{width:420px;border-radius:18px;overflow:hidden;background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));box-shadow:0 8px 30px rgba(0,0,0,0.6);transform:translateY(0);transition:transform .45s}
+.card-floating img{width:100%;height:100%;object-fit:cover;display:block}
+.card-info{padding:14px;background:linear-gradient(180deg, rgba(0,0,0,0.45), transparent);color:var(--muted)}
+.card-floating:hover{transform:translateY(-10px) rotate(-1deg)}
+
+/* accent orb */
+.accent-orb{position:absolute;right:-40px;top:-60px;width:220px;height:220px;border-radius:50%;background:conic-gradient(from 120deg, rgba(155,89,255,0.18), rgba(255,121,198,0.12));filter:blur(40px);pointer-events:none;transform:scale(.9)}
+
+/* sections */
+.section{padding:64px 0}
+.section-title{font-size:28px;margin-bottom:8px}
+.section-lead{color:var(--muted);margin-bottom:22px}
+
+/* services */
+.services-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.service-card{background:var(--panel);padding:20px;border-radius:14px;backdrop-filter:blur(6px);transition:transform .3s, box-shadow .3s}
+.service-card:hover{transform:translateY(-8px);box-shadow:0 12px 40px rgba(0,0,0,0.6)}
+.service-card .icon{font-size:28px;margin-bottom:12px}
+
+/* gallery masonry */
+.gallery .masonry{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.masonry-item{overflow:hidden;border-radius:12px}
+.masonry-item img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s}
+.masonry-item img:hover{transform:scale(1.06)}
+
+/* team */
+.team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.team-card{background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);padding:14px;border-radius:12px;text-align:center}
+.team-card img{width:100%;height:220px;object-fit:cover;border-radius:10px;margin-bottom:12px}
+
+/* contact */
+.contact-grid{display:grid;grid-template-columns:360px 1fr;gap:20px}
+.contact-card{background:var(--panel);padding:20px;border-radius:12px}
+.form-card{background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);padding:18px;border-radius:12px}
+.form-card .fields{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px}
+.form-card input,.form-card select,.form-card textarea{width:100%;padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit;min-height:44px}
+.form-card textarea{min-height:80px;grid-column:1/-1}
+
+/* footer */
+.site-footer{padding:28px 0;border-top:1px solid rgba(255,255,255,0.03);color:var(--muted)}
+.footer-inner{display:flex;justify-content:space-between;align-items:center}
+
+/* modal */
+.modal{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:linear-gradient(rgba(3,6,8,0.6), rgba(3,6,8,0.6));opacity:0;pointer-events:none;transition:opacity .25s}
+.modal[aria-hidden="false"]{opacity:1;pointer-events:auto}
+.modal-panel{background:linear-gradient(180deg, rgba(10,12,15,0.9), rgba(10,12,15,0.95));padding:22px;border-radius:14px;max-width:420px;width:100%;position:relative}
+.modal-close{position:absolute;right:12px;top:10px;background:none;border:0;color:var(--muted);font-size:18px}
+
+/* responsive */
+@media(max-width:1000px){
+  .hero-grid{grid-template-columns:1fr;gap:20px}
+  .hero-visual{order:-1}
+  .services-grid{grid-template-columns:repeat(2,1fr)}
+  .gallery .masonry{grid-template-columns:repeat(2,1fr)}
+  .team-grid{grid-template-columns:repeat(2,1fr)}
+  .contact-grid{grid-template-columns:1fr}
+  .hamburger{display:block}
+  .nav{display:none}
+}
+
+@media(max-width:520px){
+  .title{font-size:28px}
+  .services-grid{grid-template-columns:1fr}
+  .team-grid{grid-template-columns:1fr}
+  .gallery .masonry{grid-template-columns:1fr}
+  .hero-ctas{flex-direction:column;align-items:flex-start}
+  .form-card .fields{grid-template-columns:1fr}
+}
