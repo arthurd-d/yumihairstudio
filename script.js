@@ -5,10 +5,28 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // hamburger toggle
   const hamburger = document.getElementById('hamburger');
-  const nav = document.querySelector('.nav');
-  hamburger.addEventListener('click', () => {
+  const nav = document.getElementById('nav');
+  
+  hamburger.addEventListener('click', (e) => {
+    e.stopPropagation();
     nav.classList.toggle('open');
     hamburger.classList.toggle('active');
+  });
+
+  // Fechar menu ao clicar em link
+  nav.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      nav.classList.remove('open');
+      hamburger.classList.remove('active');
+    });
+  });
+
+  // Fechar menu ao clicar fora
+  document.addEventListener('click', (e) => {
+    if (!nav.contains(e.target) && !hamburger.contains(e.target)) {
+      nav.classList.remove('open');
+      hamburger.classList.remove('active');
+    }
   });
 
   // modal
@@ -20,9 +38,11 @@ document.addEventListener('DOMContentLoaded', () => {
   bookBtn.addEventListener('click', () => {
     modal.setAttribute('aria-hidden', 'false');
   });
+  
   modalClose.addEventListener('click', () => {
     modal.setAttribute('aria-hidden', 'true');
   });
+  
   modal.addEventListener('click', (e) => {
     if(e.target === modal) modal.setAttribute('aria-hidden','true');
   });
